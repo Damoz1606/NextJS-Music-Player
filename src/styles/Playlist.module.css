@@ -4,8 +4,7 @@
     left: 0;
     width: 100vw;
     height: auto;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     border-radius: var(--border-inner-radius);
     background-color: var(--background-hex);
     z-index: 1;

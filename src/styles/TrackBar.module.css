@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.duration {
+    text-align: right;
+}
+
+.duration,
+.time {
+    font-size: 0.75rem;
+}
+
+.bar {
+    width: 100%;
+    margin: 0.5rem 0;
+    background-color: var(--foreground-disabled-hex);
+    cursor: pointer;
+}
+
+.bar,
+.current {
+    border-radius: 10px;
+    height: 3px;
+}
+
+.current {
+    background-color: var(--primary-color-hex);
+    transition: all .1s ease-in;
+}

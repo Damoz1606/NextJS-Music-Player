@@ -1,0 +1,58 @@
+.container {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container>.top {
+    display: grid;
+    grid-template-columns: 175px 25px;
+    gap: 10px;
+    height: 200px;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.container>.top .cover {
+    grid-column: 1;
+    position: relative;
+}
+
+.cover img {
+    width: 135%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: -45%;
+    transform: translate(0, -50%);
+    border-radius: var(--border-inner-radius);
+}
+
+.progress {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.progress>.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.album p {
+    color: var(--foreground-hex);
+    font-size: 0.75rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.album .track {
+    font-size: 1rem !important;
+    font-weight: bold;
+}

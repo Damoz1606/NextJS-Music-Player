@@ -1,0 +1,36 @@
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.control {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--foreground-disabled-hex);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0.25rem;
+    transition: color .3s ease-in-out;
+}
+
+.control[disabled] {
+    color: var(--foreground-disabled-hex) !important;
+}
+
+.control:hover {
+    color: var(--primary-color-hex);
+}
+
+.control.action {
+    width: 42px;
+    height: 42px;
+    border: 5px solid var(--foreground-disabled-hex);
+    transition: border-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.control:hover.action {
+    border-color: var(--primary-color-hex);
+}

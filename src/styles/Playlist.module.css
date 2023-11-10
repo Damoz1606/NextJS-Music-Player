@@ -1,0 +1,102 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-inner-radius);
+    background-color: var(--background-hex);
+    z-index: 1;
+}
+
+.container button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    color: var(--foreground-hex);
+    transition: color .3s ease-in-out;
+    border-radius: 50%;
+}
+
+.container button:hover {
+    box-shadow: var(--outer-shadow);
+    color: var(--primary-disabled-color-hex);
+}
+
+.container button:active {
+    box-shadow: var(--inner-shadow);
+    color: var(--primary-disabled-color-hex);
+}
+
+.list {
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    overflow-y: auto;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.list .shadow {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    /* border: 1px solid black; */
+    box-shadow: 0px 1px 20px 20px var(--background-hex);
+}
+
+.list.closed {
+    width: 100%;
+    max-height: 0;
+    margin-bottom: 0;
+    overflow-y: hidden;
+}
+
+.list .item {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: var(--border-inner-radius);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    transition: color .2s ease-in-out, background-color .3s ease-in-out;
+}
+
+.list .item.selected {
+    background-color: var(--primary-disabled-color-hex);
+    color: var(--background-hex);
+}
+
+.list .item:hover {
+    background-color: var(--foreground-disabled-hex);
+    color: var(--background-hex);
+}
+
+.list p {
+    font-size: 0.75rem;
+}
+
+.list .track {
+    font-size: 1rem !important;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        width: 500px;
+    }
+}

@@ -1,6 +1,6 @@
 .container {
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: 1rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -26,7 +26,7 @@
     height: auto;
     position: absolute;
     top: 50%;
-    left: -45%;
+    left: -50%;
     transform: translate(0, -50%);
     border-radius: var(--border-inner-radius);
 }

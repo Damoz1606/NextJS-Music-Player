@@ -7,6 +7,8 @@ import { Control } from '@/components/Control'
 import { AudioProvider } from '@/context/AudioContext'
 import { audioTracks } from '@/store'
 import { Player } from '@/components/Player'
+import { Playlist } from '@/components/Playlist'
+import { Mode } from '@/components/mode'
 
 /* https://codesandbox.io/s/react-audio-player-with-hooks-xj4897445q?file=/src/components/Player/Audio.js:2071-2079 */
 
@@ -24,6 +26,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.wrapper} ${rubik.className}`}>
         <AudioProvider audios={audioTracks}>
+          <Playlist />
           <Player />
         </AudioProvider>
       </main>

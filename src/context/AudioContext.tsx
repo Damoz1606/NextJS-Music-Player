@@ -4,6 +4,7 @@ import { ReactNode, SyntheticEvent, createContext, useContext, useEffect, useRef
 type AudioContextProps = {
     index: number;
     metadata: Audio;
+    metadatas: Audio[];
     time: number;
     duration: number;
     isPlaying: boolean;
@@ -17,7 +18,8 @@ type AudioContextProps = {
 
 const AudioContext = createContext<AudioContextProps>({
     index: 0,
-    metadata: { cover: "", source: "", url: "" },
+    metadata: { cover: "", source: "", url: "", artist: "", song: "" },
+    metadatas: [],
     time: 0,
     duration: 0,
     isPlaying: true,
@@ -81,7 +83,7 @@ const AudioProvider: React.FC<AudioProviderProps> = ({ audios, children }) => {
     const next = () => {
         if (audioPlayer.current) {
             let index = currentIndex + 1;
-            if (currentIndex >= audios.length) {
+            if (index >= audios.length) {
                 index = 0;
             }
             setIndex(index);
@@ -92,7 +94,7 @@ const AudioProvider: React.FC<AudioProviderProps> = ({ audios, children }) => {
     const previous = () => {
         if (audioPlayer.current) {
             let index = currentIndex - 1;
-            if (currentIndex < 0) {
+            if (index < 0) {
                 index = audios.length - 1;
             }
             setIndex(index);
@@ -108,13 +110,20 @@ const AudioProvider: React.FC<AudioProviderProps> = ({ audios, children }) => {
     const setIndex = (index: number) => {
         setCurrentIndex(index);
         setTime(0);
-        if (audioPlayer.current)
+        if (audioPlayer.current) {
             audioPlayer.current.load();
+            if (isPlaying) {
+                play();
+            } else {
+                pause();
+            }
+        }
     }
 
     const value: AudioContextProps = {
         index: currentIndex,
         metadata: audios[currentIndex],
+        metadatas: audios,
         time: currentTime,
         duration,
         isPlaying,

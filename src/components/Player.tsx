@@ -11,10 +11,10 @@ const Player: React.FC = () => {
 
     const handleTrackClick = (newPercent: number) => audio.setTime(newPercent * audio.duration);
     return (
-        <div className={`${styles.container}`}>
+        <div className={`${styles.container} neumorph outer`}>
             <div className={`${styles.top}`}>
                 <div className={`${styles.cover}`}>
-                    <Image src={audio.metadata.cover} width={100} height={100} alt={''} priority />
+                    <Image className='neumorph outer' src={audio.metadata.cover} width={100} height={100} alt={''} priority />
                 </div>
                 <Control
                     play={audio.isPlaying}
@@ -26,8 +26,8 @@ const Player: React.FC = () => {
             <div className={`${styles.progress}`}>
                 <div className={`${styles.top}`}>
                     <div className={`${styles.album}`}>
-                        <p className={`${styles.track}`}>Shelter</p>
-                        <p className={`${styles.name}`}>Madeon and Robison</p>
+                        <p className={`${styles.track}`}>{audio.metadata.song}</p>
+                        <p className={`${styles.name}`}>{audio.metadata.artist}</p>
                     </div>
                 </div>
                 <TrackBar seconds={audio.duration} progressPercent={audio.time / audio.duration} onClick={handleTrackClick} />

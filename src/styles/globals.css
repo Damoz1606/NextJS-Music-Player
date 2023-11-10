@@ -11,7 +11,7 @@
   --secondary-color-hex: #00c8fa;
 
   --primary-disabled-color-hex: #fa4300bf;
-  --secondary-disabled-color-hex: #00c8fa80;
+  --secondary-disabled-color-hex: #00c8fab8;
 
   --light-shadow-rgba: 255, 255, 255, 0.75;
   --dark-shadow-rgba: 94, 104, 121, 0.3;
@@ -20,13 +20,13 @@
   --inner-shadow: inset -2px -2px 5px rgba(var(--light-shadow-rgba)), inset 2px 2px 5px rgba(var(--dark-shadow-rgba));
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-hex: #6a707b;
     --background-hex: #31363c;
 
     --primary-color-hex: #fa4300;
-    --secondary-color-hex: #00c8fa0;
+    --secondary-disabled-color-hex: #00c8fab8;
 
     --light-shadow-rgba: 66, 66, 66, 0.5;
     --dark-shadow-rgba: 0, 0, 0, 0.3;
@@ -34,7 +34,7 @@
     --outer-shadow: -2px -2px 5px rgba(var(--light-shadow-rgba)), 2px 2px 5px rgba(var(--dark-shadow-rgba));
     --inner-shadow: inset -2px -2px 5px rgba(var(--light-shadow-rgba)), inset 2px 2px 5px rgba(var(--dark-shadow-rgba));
   }
-} */
+}
 
 * {
   margin: 0;
@@ -79,8 +79,31 @@ button[disabled] {
   cursor: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
-  }
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid var(--foreground-disabled-hex);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--foreground-hex);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-disabled-hex);
+}
+
+.neumorph.outer {
+  box-shadow: var(--outer-shadow);
+}
+
+.neumorph.inner {
+  box-shadow: var(--inner-shadow);
 }

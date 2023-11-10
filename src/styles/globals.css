@@ -28,8 +28,8 @@
     --primary-color-hex: #fa4300;
     --secondary-disabled-color-hex: #00c8fab8;
 
-    --light-shadow-rgba: 66, 66, 66, 0.5;
-    --dark-shadow-rgba: 0, 0, 0, 0.3;
+    --light-shadow-rgba: 136, 136, 136, 0.5;
+    --dark-shadow-rgba: 0, 0, 0, 0.5;
 
     --outer-shadow: -2px -2px 5px rgba(var(--light-shadow-rgba)), 2px 2px 5px rgba(var(--dark-shadow-rgba));
     --inner-shadow: inset -2px -2px 5px rgba(var(--light-shadow-rgba)), inset 2px 2px 5px rgba(var(--dark-shadow-rgba));
